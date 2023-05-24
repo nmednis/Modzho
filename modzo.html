@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<style>
+	h1{
+		font-family:Raleway;
+		color:black;
+		font-size:70px;
+		text-align:center;
+	}
+	label.kadnav{
+		color:Black;
+		align:center;
+		font-family:Raleway;
+		color:red;
+	}
+	label.kadir{
+		color:Black;
+		align:center;
+		font-family:Raleway;
+		color:Navy;
+	}
+	input.jautajums {
+		width:500px;
+		color:Black;
+		border: solid 3px Black;
+		background-color:#DCDCDC;
+		text-align: center;
+		padding: 2px 10px;
+		font-family:Raleway;
+	}
+	input.atbilde {
+		width:300px;
+		color:Black;
+		border: solid 3px Black;
+		background-color:#DCDCDC;
+		text-align: center;
+		font-family:Raleway;
+	}
+	button.viens{
+		background-color:DarkOrange;
+		color:Black;
+		font-size:40px;
+		text-align:center;
+		border:5px solid Black;
+		width:8%;
+		height:100px;
+		font-family:Raleway;
+		cursor: pointer;
+	}
+	button.viens:hover{
+		background-color:Black;
+		color:white;
+		font-size:50px;
+		text-align:center;
+		border:5px solid #2F4F4F;
+		width:8%;
+		height:100px;
+		font-family:Raleway;
+		cursor: pointer;
+	}
+	button.a{
+		background-color:DarkOrange ;
+		border:3px solid Black;
+		color: Black;
+		padding: 2px 10px;
+		text-align: center;
+		font-family:Raleway;
+	}
+	button.a:hover{
+		background-color:Black ;
+		border:3px solid #2F4F4F ;
+		color: White;
+		padding: 2px 10px;
+		text-align: center;
+		font-family:Raleway;
+	}
+	button.b{
+		background-color:DarkOrange ;
+		border:3px solid Black;
+		color: black;
+		padding: 2px 10px;
+		text-align: center;
+		font-family:Raleway;
+	}
+	button.b:hover{
+		background-color:Black ;
+		border:3px solid #2F4F4F ;
+		color: White;
+		padding: 2px 10px;
+		text-align: center;
+		font-family:Raleway;
+	}
+	div{
+		margin:auto;
+		width:500px;
+		height:170px;
+		border:5px solid Black;
+		padding:50px;
+		style.display:none;
+	}
+	h2{
+		font-family:Raleway;
+		font-size:70px;
+		text-align:center;
+		color: Black;
+	}
+	p{
+		font-family:Raleway;
+		font-size:20px;
+		text-align:center;
+		color:Red;
+	}
+</style>
+</head>
+<body style="background-color:Orange;">
+	<h1> Nu čau, Sasietais!!! </h1>
+	<p> Atbildē pirmo burtu raksti lielo!!! </p> 
+	<button class="viens" id="viens" onclick="PogaViens() & uzdevums1()" >1</button>
+	<button class="viens" id="divi"  onclick="PogaDivi() & uzdevums2()" >2</button>
+	<button class="viens" id="tris"  onclick="PogaTris() & uzdevums3()" >3</button>
+	<button class="viens" id="cetri"  onclick="PogaCetri() & uzdevums4()" >4</button>
+	<button class="viens" id="pieci"  onclick="PogaPieci() & uzdevums5()" >5</button>
+	<button class="viens" id="sesi"  onclick="PogaSesi() & uzdevums6()" >6</button>
+	<button class="viens" id="septini"  onclick="PogaSeptini() & uzdevums7()" >7</button>
+	<button class="viens" id="astoni"  onclick="PogaAstoni() & uzdevums8()" >8</button>
+	<button class="viens" id="devini"  onclick="PogaDevini() & uzdevums9()" >9</button>
+	<button class="viens" id="desmit"  onclick="PogaDesmit() & uzdevums10()" >10</button>
+	<button class="viens" id="vienpadsmit"  onclick="PogaVienpadsmit() & uzdevums11()" >11</button>
+	<br><br><br>
+	<div id="pirmais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums1" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde1" value="">
+		<button class="a"onclick="parbaude1()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude" for="rez1">Un atbilde ir</label>
+		<input class="atbilde" type="text" id="rez1" value=""> <br><br>
+		<button id="b1" class="b" onclick="uzdevums1()">Jauns uzdevums</button>
+		<label id="ir1" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="otrais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums2" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde2" value="">
+		<button class="a"onclick="parbaude2()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez2">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez2" value=""> <br><br>
+		<button id="b2" class="b"onclick="uzdevums2()">Jauns uzdevums</button><br><br>
+		<label id="nav2" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir2" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="tresais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums3" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde3" value="">
+		<button class="a"onclick="parbaude3()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez3">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez3" value=""> <br><br>
+		<button id="b3" class="b"onclick="uzdevums3()">Jauns uzdevums</button><br><br>
+		<label id="nav3" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir3" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="ceturtais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums4" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde4" value="">
+		<button class="a"onclick="parbaude4()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez4">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez4" value=""> <br><br>
+		<button id="b4" class="b"onclick="uzdevums4()">Jauns uzdevums</button><br><br>
+		<label id="nav4" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir4" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="piektais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums5" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde5" value="">
+		<button class="a"onclick="parbaude5()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez5">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez5" value=""> <br><br>
+		<button id="b5" class="b"onclick="uzdevums5()">Jauns uzdevums</button><br><br>
+		<label id="nav5" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir5" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="sestais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums6" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde6" value="">
+		<button class="a"onclick="parbaude6()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez6">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez6" value=""> <br><br>
+		<button id="b6" class="b"onclick="uzdevums6()">Jauns uzdevums</button><br><br>
+		<label id="nav6" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir6" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="septitais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums7" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde7" value="">
+		<button class="a"onclick="parbaude7()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez7">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez7" value=""> <br><br>
+		<button id="b7" class="b"onclick="uzdevums7()">Jauns uzdevums</button><br><br>
+		<label id="nav7" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir7" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="astotais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums8" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde8" value="">
+		<button class="a"onclick="parbaude8()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez8">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez8" value=""> <br><br>
+		<button id="b8" class="b"onclick="uzdevums8()">Jauns uzdevums</button><br><br>
+		<label id="nav8" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir8" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="devitais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums9" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde9" value="">
+		<button class="a"onclick="parbaude9()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez9">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez9" value=""> <br><br>
+		<button id="b9" class="b"onclick="uzdevums9()">Jauns uzdevums</button><br><br>
+		<label id="nav9" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir9" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="desmitais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums10" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde10" value="">
+		<button class="a"onclick="parbaude10()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez10">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez10" value=""> <br><br>
+		<button id="b10" class="b"onclick="uzdevums10()">Jauns uzdevums</button><br><br>
+		<label id="nav10" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir10" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<div id="vienpadsmitais" style="display:none">
+		<input class="jautajums" type="text" id="jautajums11" value="">
+		<br><br>
+		<input class="atbilde" type="text" id="atbilde11" value="">
+		<button class="a"onclick="parbaude11()">Pārbaude</button>
+		<br><br>
+		<label class="parbaude"for="rez11">Un atbilde ir</label>
+		<input class="atbilde"type="text" id="rez11" value=""> <br><br>
+		<button id="b11" class="b"onclick="uzdevums11()">Jauns uzdevums</button><br><br>
+		<label id="nav11" class="kadnav" style="display:none"> Atbildi pareizi uz iepriekšējo jautājumu!</label>
+		<label id="ir11" class="kadir" style="display:none"> Dodies uz nākamo jautājumu!</label>
+	</div>
+	<h2 id="kods" style="display:none"> 4046 </h2>
+<script>
+	var a,b,y,p;
+	p=0;
+	function uzdevums1() { 
+		document.getElementById("atbilde1").value="";
+		document.getElementById("rez1").value = "";
+		document.getElementById("jautajums1").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==0){
+		document.getElementById("pirmais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>0){
+		document.getElementById("pirmais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums1").value = "Kur iepazinies ar Sanitu?";
+		}
+		if(y==2){
+			document.getElementById("jautajums1").value = "Sanitas apavu izmērs?";
+		}
+	}
+	function parbaude1(){
+		a=document.getElementById("atbilde1").value;
+		if(p==0){
+		if(y==1){
+			b="Ballē";
+		}
+		if(y==2){
+			b="37";
+		}
+		if(a==b){
+			document.getElementById("rez1").value="Pareiza";
+			document.getElementById("pirmais").style.backgroundColor="Lime";
+			document.getElementById("viens").style.backgroundColor="Lime";
+			document.getElementById("ir1").style.display = "block";
+			document.getElementById("b1").style.display = "none";
+			p=1;
+		}
+		else{
+			document.getElementById("rez1").value="Nepareiza";
+			document.getElementById("pirmais").style.backgroundColor="red";
+		}
+		}
+		if(p>0){
+			document.getElementById("ir1").style.display = "block";
+		}
+	}
+	function uzdevums2(){
+		document.getElementById("atbilde2").value="";
+		document.getElementById("rez2").value = "";
+		document.getElementById("jautajums2").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==1){
+		document.getElementById("otrais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>1){
+		document.getElementById("otrais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums2").value = "Sanitas garums?(raksti metros, līdz diviem cipariem aiz kommata)";
+		}
+		if(y==2){
+			document.getElementById("jautajums2").value = "Valsts, kuru Sanita gribētu apmeklēt?";
+		}
+	}
+	function parbaude2(){
+		if(p==1){
+			a=document.getElementById("atbilde2").value;
+			document.getElementById("nav2").style.display = "none";
+			if(y==1){
+			b="1,68"
+		}
+		if(y==2){
+			b="Spānija"
+		}
+		if(a==b){
+			p=2;
+			document.getElementById("rez2").value="Pareiza";
+			document.getElementById("otrais").style.backgroundColor="Lime";
+			document.getElementById("divi").style.backgroundColor="Lime";
+			document.getElementById("ir2").style.display = "block";
+			document.getElementById("b2").style.display = "none";
+		}
+		else{
+			document.getElementById("rez2").value="Nepareiza";
+			document.getElementById("otrais").style.backgroundColor="red";
+		}
+		}
+		else if(p<1){
+			document.getElementById("nav2").style.display = "block";
+		}
+		else if(p>1){
+			document.getElementById("ir2").style.display = "block";
+		}
+	}
+	function uzdevums3(){
+		document.getElementById("atbilde3").value="";
+		document.getElementById("rez3").value = "";
+		document.getElementById("jautajums3").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==2){
+		document.getElementById("tresais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>2){
+		document.getElementById("tresais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums3").value = "Ēdiens, ko Sanita NEKAD neēstu?";
+		}
+		if(y==2){
+			document.getElementById("jautajums3").value = "Dzīvnieks, ar kuru Sanita sevi identificē?(mīļvārdiņā, piemēram, zivtiņa)";
+		}
+	}
+	function parbaude3(){
+		if(p==2){
+			a=document.getElementById("atbilde3").value;
+			document.getElementById("nav3").style.display = "none";
+			if(y==1){
+			b="Smirdīgs"
+		}
+		if(y==2){
+			b="Tīģerītis"
+		}
+		if(a==b){
+			p=3;
+			document.getElementById("rez3").value="Pareiza";
+			document.getElementById("tresais").style.backgroundColor="Lime";
+			document.getElementById("tris").style.backgroundColor="Lime";
+			document.getElementById("ir3").style.display = "block";
+			document.getElementById("b3").style.display = "none";
+		}
+		else{
+			document.getElementById("rez3").value="Nepareiza";
+			document.getElementById("tresais").style.backgroundColor="red";
+		}
+		}
+		else if(p<2){
+			document.getElementById("nav3").style.display = "block";
+		}
+		else if(p>2){
+			document.getElementById("ir3").style.display = "block";
+		}
+	}
+	function uzdevums4(){
+		document.getElementById("atbilde4").value="";
+		document.getElementById("rez4").value = "";
+		document.getElementById("jautajums4").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==3){
+		document.getElementById("ceturtais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>3){
+		document.getElementById("ceturtais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums4").value = "Uz kuras auss Sanitai ir dzimumzīme?";
+		}
+		if(y==2){
+			document.getElementById("jautajums4").value = "Kurš tiek uzskatīts par kopā būšanas datumu?(raksti, piemēram, 26.janvāris)";
+		}
+	}
+	function parbaude4(){
+		if(p==3){
+			a=document.getElementById("atbilde4").value;
+			document.getElementById("nav4").style.display = "none";
+			if(y==1){
+			b="Abām"
+		}
+		if(y==2){
+			b="26.marts"
+		}
+		if(a==b){
+			p=4;
+			document.getElementById("rez4").value="Pareiza";
+			document.getElementById("ceturtais").style.backgroundColor="Lime";
+			document.getElementById("cetri").style.backgroundColor="Lime";
+			document.getElementById("ir4").style.display = "block";
+			document.getElementById("b4").style.display = "none";
+		}
+		else{
+			document.getElementById("rez4").value="Nepareiza";
+			document.getElementById("ceturtais").style.backgroundColor="red";
+		}
+		}
+		else if(p<3){
+			document.getElementById("nav4").style.display = "block";
+		}
+		else if(p>3){
+			document.getElementById("ir4").style.display = "block";
+		}
+	}
+	function uzdevums5(){
+		document.getElementById("atbilde5").value="";
+		document.getElementById("rez5").value = "";
+		document.getElementById("jautajums5").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==4){
+		document.getElementById("piektais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>4){
+		document.getElementById("piektais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums5").value = "Kas bija pirmais, kas Sanitai piesaistīja Tevī?";
+		}
+		if(y==2){
+			document.getElementById("jautajums5").value = "Kur Sanitai visvairāk kut?";
+		}
+	}
+	function parbaude5(){
+		if(p==4){
+			a=document.getElementById("atbilde5").value;
+			document.getElementById("nav5").style.display = "none";
+			if(y==1){
+			b="Brūnās acis"
+		}
+		if(y==2){
+			b="Pēdas"
+		}
+		if(a==b){
+			p=5;
+			document.getElementById("rez5").value="Pareiza";
+			document.getElementById("piektais").style.backgroundColor="Lime";
+			document.getElementById("pieci").style.backgroundColor="Lime";
+			document.getElementById("ir5").style.display = "block";
+			document.getElementById("b5").style.display = "none";
+		}
+		else{
+			document.getElementById("rez5").value="Nepareiza";
+			document.getElementById("piektais").style.backgroundColor="red";
+		}
+		}
+		else if(p<4){
+			document.getElementById("nav5").style.display = "block";
+		}
+		else if(p>4){
+			document.getElementById("ir5").style.display = "block";
+		}
+	}
+	function uzdevums6(){
+		document.getElementById("atbilde6").value="";
+		document.getElementById("rez6").value = "";
+		document.getElementById("jautajums6").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==5){
+		document.getElementById("sestais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>5){
+		document.getElementById("sestais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums6").value = "Muļķīgākā lieta, ko Sanita izdarīja bērnībā?";
+		}
+		if(y==2){
+			document.getElementById("jautajums6").value = "Sanitas ieskatā, kādas ir Tavas 2 labākās īpašības?";
+		}
+	}
+	function parbaude6(){
+		if(p==5){
+			a=document.getElementById("atbilde6").value;
+			document.getElementById("nav6").style.display = "none";
+			if(y==1){
+			b="Ugunskurs dzīvoklī"
+		}
+		if(y==2){
+			b="Izpalīdzīgs, gādīgs"
+		}
+		if(a==b){
+			p=6;
+			document.getElementById("rez6").value="Pareiza";
+			document.getElementById("sestais").style.backgroundColor="Lime";
+			document.getElementById("sesi").style.backgroundColor="Lime";
+			document.getElementById("ir6").style.display = "block";
+			document.getElementById("b6").style.display = "none";
+		}
+		else{
+			document.getElementById("rez6").value="Nepareiza";
+			document.getElementById("sestais").style.backgroundColor="red";
+		}
+		}
+		else if(p<5){
+			document.getElementById("nav6").style.display = "block";
+		}
+		else if(p>5){
+			document.getElementById("ir6").style.display = "block";
+		}
+	}
+	function uzdevums7(){
+		document.getElementById("atbilde7").value="";
+		document.getElementById("rez7").value = "";
+		document.getElementById("jautajums7").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==6){
+		document.getElementById("septitais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>6){
+		document.getElementById("septitais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums7").value = "Kādu auto Sanita vēlētos sev?";
+		}
+		if(y==2){
+			document.getElementById("jautajums7").value = "Kāda bija Sanitas 18 gadu jubilejas ballīte?(vienā vārdā)";
+		}
+	}
+	function parbaude7(){
+		if(p==6){
+			a=document.getElementById("atbilde7").value;
+			document.getElementById("nav7").style.display = "none";
+			if(y==1){
+			b="Džipveidīgu"
+		}
+		if(y==2){
+			b="Mierīga"
+		}
+		if(a==b){
+			p=7;
+			document.getElementById("rez7").value="Pareiza";
+			document.getElementById("septitais").style.backgroundColor="Lime";
+			document.getElementById("septini").style.backgroundColor="Lime";
+			document.getElementById("ir7").style.display = "block";
+			document.getElementById("b7").style.display = "none";
+		}
+		else{
+			document.getElementById("rez7").value="Nepareiza";
+			document.getElementById("septitais").style.backgroundColor="red";
+		}
+		}
+		else if(p<6){
+			document.getElementById("nav7").style.display = "block";
+		}
+		else if(p>6){
+			document.getElementById("ir7").style.display = "block";
+		}
+	}
+	function uzdevums8(){
+		document.getElementById("atbilde8").value="";
+		document.getElementById("rez8").value = "";
+		document.getElementById("jautajums8").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==7){
+		document.getElementById("astotais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>7){
+		document.getElementById("astotais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums8").value = "Sanitas ieskatā, viņas vislabākā īpašība?";
+		}
+		if(y==2){
+			document.getElementById("jautajums8").value = "Pirmais ēdiens, ko Sanita Tev pagatavoja?";
+		}
+	}
+	function parbaude8(){
+		if(p==7){
+			a=document.getElementById("atbilde8").value;
+			document.getElementById("nav8").style.display = "none";
+			if(y==1){
+			b="Jauka"
+		}
+		if(y==2){
+			b="Kartupeļi krāsnī"
+		}
+		if(a==b){
+			p=8;
+			document.getElementById("rez8").value="Pareiza";
+			document.getElementById("astotais").style.backgroundColor="Lime";
+			document.getElementById("astoni").style.backgroundColor="Lime";
+			document.getElementById("ir8").style.display = "block";
+			document.getElementById("b8").style.display = "none";
+		}
+		else{
+			document.getElementById("rez8").value="Nepareiza";
+			document.getElementById("astotais").style.backgroundColor="red";
+		}
+		}
+		else if(p<7){
+			document.getElementById("nav8").style.display = "block";
+		}
+		else if(p>7){
+			document.getElementById("ir8").style.display = "block";
+		}
+	}
+	function uzdevums9(){
+		document.getElementById("atbilde9").value="";
+		document.getElementById("rez9").value = "";
+		document.getElementById("jautajums9").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==8){
+		document.getElementById("devitais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>8){
+		document.getElementById("devitais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums9").value = "Kā Sanitu bērnībā sauca viņas vecāki?";
+		}
+		if(y==2){
+			document.getElementById("jautajums9").value = "Cik Sanitai ir māsīcas?";
+		}
+	}
+	function parbaude9(){
+		if(p==8){
+			a=document.getElementById("atbilde9").value;
+			document.getElementById("nav9").style.display = "none";
+			if(y==1){
+			b="Sančo"
+		}
+		if(y==2){
+			b="12"
+		}
+		if(a==b){
+			p=9;
+			document.getElementById("rez9").value="Pareiza";
+			document.getElementById("devitais").style.backgroundColor="Lime";
+			document.getElementById("devini").style.backgroundColor="Lime";
+			document.getElementById("ir9").style.display = "block";
+			document.getElementById("b9").style.display = "none";
+		}
+		else{
+			document.getElementById("rez9").value="Nepareiza";
+			document.getElementById("devitais").style.backgroundColor="red";
+		}
+		}
+		else if(p<8){
+			document.getElementById("nav9").style.display = "block";
+		}
+		else if(p>8){
+			document.getElementById("ir9").style.display = "block";
+		}
+	}
+	function uzdevums10(){
+		document.getElementById("atbilde10").value="";
+		document.getElementById("rez10").value = "";
+		document.getElementById("jautajums10").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==9){
+		document.getElementById("desmitais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>9){
+		document.getElementById("desmitais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums10").value = "Cik Sanitai ir brālēni?";
+		}
+		if(y==2){
+			document.getElementById("jautajums10").value = "Kas noslēpts Sanitas slepenajā mapē?";
+		}
+	}
+	function parbaude10(){
+		if(p==9){
+			a=document.getElementById("atbilde10").value;
+			document.getElementById("nav10").style.display = "none";
+			if(y==1){
+			b="10"
+		}
+		if(y==2){
+			b="Madara dzēruma attēli"
+		}
+		if(a==b){
+			p=10;
+			document.getElementById("rez10").value="Pareiza";
+			document.getElementById("desmitais").style.backgroundColor="Lime";
+			document.getElementById("desmit").style.backgroundColor="Lime";
+			document.getElementById("ir10").style.display = "block";
+			document.getElementById("b10").style.display = "none";
+		}
+		else{
+			document.getElementById("rez10").value="Nepareiza";
+			document.getElementById("desmitais").style.backgroundColor="red";
+		}
+		}
+		else if(p<9){
+			document.getElementById("nav10").style.display = "block";
+		}
+		else if(p>9){
+			document.getElementById("ir10").style.display = "block";
+		}
+	}
+	function uzdevums11(){
+		document.getElementById("atbilde11").value="";
+		document.getElementById("rez11").value = "";
+		document.getElementById("jautajums11").value = "";
+		y=Math.floor(Math.random() * 2) + 1;
+		if(p==10){
+		document.getElementById("vienpadsmitais").style.backgroundColor="DarkOrange";
+		}
+		else if(p>10){
+		document.getElementById("vienpadsmitais").style.backgroundColor="Lime";
+		}
+		if(y==1){
+			document.getElementById("jautajums11").value = "Sanitas acu krāsa?";
+		}
+		if(y==2){
+			document.getElementById("jautajums11").value = "Sanitas laulību gredzena izmērs?";
+		}
+	}
+	function parbaude11(){
+		if(p==10){
+			a=document.getElementById("atbilde11").value;
+			document.getElementById("nav11").style.display = "none";
+			if(y==1){
+			b="Zilganpelēka"
+		}
+		if(y==2){
+			b="15,5"
+		}
+		if(a==b){
+			p=11;
+			document.getElementById("rez11").value="Pareiza";
+			document.getElementById("vienpadsmitais").style.backgroundColor="Lime";
+			document.getElementById("vienpadsmit").style.backgroundColor="Lime";
+			document.getElementById("ir11").style.display = "block";
+			document.getElementById("b11").style.display = "none";
+			document.getElementById("kods").style.display = "block";
+		}
+		else{
+			document.getElementById("rez11").value="Nepareiza";
+			document.getElementById("vienpadsmitais").style.backgroundColor="red";
+		}
+		}
+		else if(p<10){
+			document.getElementById("nav11").style.display = "block";
+		}
+		else if(p>10){
+			document.getElementById("ir11").style.display = "block";
+		}
+	}
+	function PogaViens (){
+		document.getElementById("pirmais").style.display = "block";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaDivi (){
+		document.getElementById("otrais").style.display = "block";
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaTris (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "block";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaCetri (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "block";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaPieci (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "block";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaSesi (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "block";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaSeptini (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "block";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaAstoni (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "block";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaDevini (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "block";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaDesmit (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "block";
+		document.getElementById("vienpadsmitais").style.display = "none";
+	}
+	function PogaVienpadsmit (){
+		document.getElementById("pirmais").style.display = "none";
+		document.getElementById("otrais").style.display = "none";
+		document.getElementById("tresais").style.display = "none";
+		document.getElementById("ceturtais").style.display = "none";
+		document.getElementById("piektais").style.display = "none";
+		document.getElementById("sestais").style.display = "none";
+		document.getElementById("septitais").style.display = "none";
+		document.getElementById("astotais").style.display = "none";
+		document.getElementById("devitais").style.display = "none";
+		document.getElementById("desmitais").style.display = "none";
+		document.getElementById("vienpadsmitais").style.display = "block";
+	}
+</script>
+
+</body>
+</html>
